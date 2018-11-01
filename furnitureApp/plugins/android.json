@@ -1,0 +1,54 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "27.+",
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    },
+    "phonegap-plugin-push": {
+      "SENDER_ID": "162284163567",
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    }
+  },
+  "dependent_plugins": {
+    "com.phonegap.plugins.PushPlugin": {
+      "PACKAGE_NAME": "com.ionicframework.devdacticsignature590693"
+    }
+  }
+}

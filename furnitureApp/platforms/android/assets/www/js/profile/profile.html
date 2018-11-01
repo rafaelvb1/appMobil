@@ -1,0 +1,48 @@
+
+<ion-view title="Perfil" hide-back-button="true">
+ <ion-content scroll="true" class="profile-page innerreview-page has-header">
+ <!--  <div class="hero slide-up" >style="background-image: url('img/menubg.jpg');"
+    <div class="content">
+      <div class="avatar"></div>
+      <h3><a class="light">Opensource Technologies</a></h3>
+    </div>
+  </div>-->
+ <!--  {{branches}} -->
+ <form name="profileFome" class="formStyle padding" ng-submit="userUpdate(profileFome);" novalidate ng-init="userData()">
+
+	 <label class="item item-input" ng-class="{ 'has-errors' : profileFome.fullname.$invalid, 'no-errors' : profileFome.fullname.$valid}"><input type="text" placeholder="Nombre" name="Nombre"  ng-minlength="4" ng-maxlength="30" maxlength="30" ng-model="profile.fullname" required></label>
+      <div class="error-container" ng-show="profileFome.fullname.$error" ng-messages="profileFome.fullname.$error">
+        <div ng-messages-include="error-list.html"></div>
+      </div>
+
+
+	 <label class="item item-input" ng-class="{ 'has-errors' : profileFome.useremail.$invalid, 'no-errors' : profileFome.useremail.$valid}"><input type="email" placeholder="Correo" name="useremail"  ng-model="profile.useremail" required></label>
+      <div class="error-container" ng-show="profileFome.useremail.$error" ng-messages="profileFome.useremail.$error">
+        <div ng-messages-include="error-list.html"></div>
+      </div>
+
+
+
+	 <button class="button button-block  icon ion-log-in button-shadow" ng-disabled="profileFome.$invalid" id="submitbutton">Actualizar</button>
+
+	</form>
+
+	 <script id="error-list.html" type="text/ng-template">
+    <div class="error" ng-message="minlength">  Minimum length of this field is 4 characters! </div>
+    <div class="error" ng-message="maxlength">  Maximum length of this field is 30 characters!  </div>
+    <div class="error" ng-message="email">  Please enter a valid email address  </div>
+    </script>
+
+    <script id="password-validate.html" type="text/ng-template">
+    <div class="error" ng-message="minlength">  Minimum length of this field is 4 characters! </div>
+    <div class="error" ng-message="maxlength">  Maximum length of this field is 15 characters!  </div>
+    </script>
+
+    <script id="error-list-cellphon.html" type="text/ng-template">
+    <div class="error" ng-message="minlength">  Minimum length of this field is 10 characters! </div>
+    <div class="error" ng-message="maxlength">  Maximum length of this field is 12 characters!  </div>
+    </script>
+
+
+ </ion-content>
+</ion-view>

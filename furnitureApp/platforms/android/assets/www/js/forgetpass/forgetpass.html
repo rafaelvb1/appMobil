@@ -1,0 +1,31 @@
+<ion-view title="Contraseña olvidada" hide-back-button="true" cache-view="false" class="common-login-modal">
+    <ion-content scroll="true" class="loginmodal">
+        <div class="login-container">
+
+        <div class = "col button-row text-center">
+            <h1 class="title">Contraseña olvidada</h1>
+        </div>
+
+            <form name="forgetpassForm" class="formStyle padding" ng-submit="forgetPass(forgetpassForm);" novalidate >
+                <label class="item item-input">
+                    <input type="email" placeholder="Correo" name="email" ng-model="forgetpassdata.email" required>
+                </label>
+
+                 <button class="button button-block  icon ion-log-in button-shadow" ng-disabled="forgetpassForm.$invalid" id="submitbutton">Submit</button>
+                 
+                 <div class="row bottom-section">
+                    <div class = "col text-center link-color"><a href="#/login">Iniciar sesión</a></div>
+                    <div class = "col text-center link-color"><a href="#/register">¡Registrate ya!</a></div>
+                </div>
+            </form>
+        </div>
+        <script id="error-list.html" type="text/ng-template">
+        <div class="error" ng-message="email">  Please enter a valid email address  </div>
+        </script>
+
+        <script id="password-validate.html" type="text/ng-template">
+        <div class="error" ng-message="minlength">  Minimum length of this field is 8 characters! </div>
+        <div class="error" ng-message="maxlength">  Maximum length of this field is 15 characters!  </div>
+        </script>
+    </ion-content>
+</ion-view>

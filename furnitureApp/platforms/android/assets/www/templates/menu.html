@@ -1,0 +1,155 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+     <!--<button ng-click="viewCart();" ng-if="isCartIconVisible" class="button cart-button button-fab button-fab-bottom-right">
+      <div class="cartIcon">{{cartItems}}</div>
+    </button>-->
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="expanded-alter">
+       <!-- <img ng-src="img/default-avatar.png"  class="avatar motion spin fade"  > -->
+       <a style="display: none" ng-click="cattoggle()"  class="button button-icon  icon {{isCategory ? 'ion-gear-a':'ion-grid'}} setting-button"></a>
+  <!--    <div class="menu-bottom">sales@opensorucetechnologies.com</div> -->
+    </ion-header-bar>
+    <ion-content class="has-expanded-header sidemenu">
+
+      <ion-list ng-show="isCategory" class="animate-show firstcontent common-content">
+        <ion-item menu-close href="#/app/dashboardlist">
+          <img src="img/sideMenu/home.png">Casa
+        </ion-item>
+        <ion-item menu-close href="#/app/profile">
+          <img src="img/sideMenu/profile.png">Perfil
+        </ion-item>
+        <ion-item menu-close href="#/app/changepassword">
+          <img src="img/sideMenu/changepassword.png">Cambiar Contraseña
+        </ion-item>
+        <!-- <ion-item menu-close href="#/app/orders">
+          <img src="img/sideMenu/orders.png">Orders
+        </ion-item> -->
+        <ion-item menu-close href="#" ng-click="logout();">
+          <img src="img/sideMenu/login.png"><span>Cerrar sesión</span>
+        </ion-item>
+      </ion-list>
+
+      <ion-list ng-show="!isCategory" class="animate-show second-content common-content">
+
+        <div class="main-menu-list-item" ng-repeat="group in groups" ng-controller="DashboardCtrl">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+              
+           
+           {{group.menu_name}}
+            &nbsp;<i class="icon plus-ico-expand" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="item in group.menu_data"
+                    ng-show="isGroupShown(group)">
+            <input menu-close ng-click="test(group.name, {{item.id}})"  class="radio-btn-select-span"  type="radio" name="{{group.name}}"> {{item.nombre}}
+          </ion-item>
+
+        </div>
+
+
+        <!--<ion-item menu-close href="#/app/dashboardlist" class="main-menu-list-item"> Altura</ion-item>
+
+        <ion-item menu-close href="#/app/dashboardlist" class="main-menu-list-item"> Profundidad </ion-item>
+
+        <ion-item menu-close href="#/app/dashboardlist" class="main-menu-list-item"> Ancho </ion-item> -->
+
+         <!-- <ion-item  ng-controller="DashboardCtrl" href="#" menu-close ng-click="test('masaje_id', 2)" class="main-menu-list-item"> Mensajes </ion-item> -->
+        <ion-item class="alto-others" ng-controller="DashboardCtrl">
+            <div class="row">
+              <div class="col col-30"><p>Alto</p></div>
+              <div class="col col-30">
+                <label class="item item-input">
+                  <input type="text" placeholder="Min" ng-change="test('Alto', 'Altomin1')" ng-model="menudata.Altomin" name="Altomin" class="Altomin">
+                </label>
+              </div>
+              <div class="col col-30" style="text-align: center"><p>To</p></div>
+              <div class="col col-30">
+                <label class="item item-input">
+                  <input type="text" placeholder="Max" ng-change="test('Alto', 'Altomax1')" ng-model="menudata.Altomax" name="Altomax" class="Altomax">
+                </label>
+              </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="alto-others">
+            <div class="row">
+              <div class="col col-30"><p>ancho</p></div>
+              {{text}}
+              <div class="col col-30">
+                <label class="item item-input">
+                  <input type="text" placeholder="Min" ng-change="test('Ancho', 'Anchomin1')" ng-model="menudata.Anchomin" name="Anchomin" class="Anchomin">
+                </label>
+              </div>
+              <div class="col col-30" style="text-align: center"><p>To</p></div>
+              <div class="col col-30">
+                <label class="item item-input">
+                  <input type="text" placeholder="Max" ng-change="test('Ancho', 'Anchomax1')" ng-model="menudata.Anchomax" name="Anchomax" class="Anchomax">
+                </label>
+              </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="alto-others" ng-controller="DashboardCtrl">
+            <div class="row">
+              <div class="col col-30"><p>profundo</p></div>
+              <div class="col col-30">
+                <label class="item item-input">
+                  <input type="text" placeholder="Min" ng-change="test('profundo', 'Promin1')" ng-model="menudata.Promin" name="Promin" class="Promin">
+                </label>
+              </div>
+              <div class="col col-30" style="text-align: center"><p>To</p></div>
+              <div class="col col-30">
+                <label class="item item-input">
+                  <input type="text" placeholder="Max" ng-change="test('profundo', 'Promax1')" ng-model="menudata.Promax" name="Promax" class="Promax">
+                </label>
+              </div>
+            </div>
+        </ion-item>
+
+        <ion-item  ng-controller="DashboardCtrl" href="#" menu-close ng-click="clearallmydata(); clearallmy()" class="main-menu-list-item"> Todos </ion-item>
+
+        <ion-item menu-close href="#/app/profile" class="main-menu-list-item"> Mi cuenta </ion-item>
+
+       
+
+       <!--  <div ng-repeat="tapiz in tapizs" class="" ><input type="radio" name="tapizSelect">{{tapiz.nombre}}</div> -->
+           
+       <!--  <div sir-accordion collection="menuAccordionArray" config="accordionConfig"></div> -->
+
+  <!--  <button ng-controller="DashboardCtrl" class="filter-btn-inmenu" menu-close ng-click="clearall()">
+      Clear All
+    </button> -->
+   </ion-list>
+   
+
+
+   <!-- <ion-list ng-show="color" class="animate-show second-content common-content">
+        <ion-item menu-close href="#"><img src="img/sideMenu/home.png">Home</ion-item>
+        <div ng-repeat="colors in color" class="" ><input type="radio" name="colorSelect">{{colors.nombre}}</div>
+           
+        <div sir-accordion collection="menuAccordionArray" config="accordionConfig"></div>
+   </ion-list> -->
+
+   <!-- <ion-list ng-show="mecanismo" class="animate-show second-content common-content">
+        <ion-item menu-close href="#/app/dashboard"><img src="img/sideMenu/home.png">Home</ion-item>
+        <div ng-repeat="mecanismos in mecanismo" class="" ><input type="radio" name="mecanismoSelect">{{mecanismos.nombre}}</div>
+           
+        <div sir-accordion collection="menuAccordionArray" config="accordionConfig"></div>
+   </ion-list> -->
+
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

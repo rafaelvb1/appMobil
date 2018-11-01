@@ -1,0 +1,69 @@
+<ion-view style="" id="" title="">
+	<!-- <ion-nav-title ui-sref="app.dashboard">Product Detail</ion-nav-title> -->
+	<ion-nav-title class="" ui-sref="">
+   <!--  <div class="search-bar">
+       <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Buscar">
+      </label>
+    </div> -->
+  </ion-nav-title>
+		
+    <ion-content class="product_detail_listing">
+        <div class="product_name_d">
+			 <p class="item-description">{{productdetail.detail[0].nombre}}</p>
+		</div>
+		<ion-slide-box>
+				<ion-slide ng-repeat="image in  productdetail.images">
+							<img style="width: 100vw; height: auto;" ng-src="{{image.path}}" />
+				</ion-slide>
+			</ion-slide-box>
+
+
+          <br>
+          <p class="caractestics-head">Características</p>
+           
+	      <div class="caractestics">
+	        <div class = "row">
+				<div class = "col-50">Tapiz</div>
+				<div class = "col-50">{{productdetail.detail[0].tapiz_nombre}}</div>		 
+			</div>
+
+			<div class = "row">
+				<div class = "col-50">Mecanismo</div>
+				<div class = "col-50">{{productdetail.detail[0].mecanismo_nombre}}</div>		 
+			</div>
+
+			<div class = "row">
+				<div class = "col-50">Color</div>
+				<div class = "col-50">{{productdetail.detail[0].color_cat}}</div>		 
+			</div>
+
+			<div class = "row">
+				<div class = "col-50">Alto</div>
+				<div class = "col-50">{{productdetail.detail[0].alto}}</div>		 
+			</div>
+
+			<div class = "row">
+				<div class = "col-50">Profundidad</div>
+				<div class = "col-50">{{productdetail.detail[0].profundo}}</div>		 
+			</div>
+
+			<div class = "row">
+				<div class = "col-50">Ancho</div>
+				<div class = "col-50">{{productdetail.detail[0].ancho}}</div>		 
+			</div>
+			{{ productdetail.detail[0].ancho }}
+
+		     
+	      </div>
+	      	<br>
+	     <!--  <div class="product-related-vedio video-section" ng-init="makeAction"> 
+             <video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer"><source src="https://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4" type="video/mp4"/></video>
+        </div>    -->
+ 
+		
+	</ion-content>
+
+
+</ion-view>

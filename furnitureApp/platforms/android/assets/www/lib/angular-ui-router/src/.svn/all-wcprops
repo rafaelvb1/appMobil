@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src
+END
+urlMatcherFactory.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/urlMatcherFactory.js
+END
+resolve.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/resolve.js
+END
+state.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/state.js
+END
+stateDirectives.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/stateDirectives.js
+END
+templateFactory.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/templateFactory.js
+END
+urlRouter.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/urlRouter.js
+END
+common.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/common.js
+END
+stateFilters.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/stateFilters.js
+END
+viewDirective.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/viewDirective.js
+END
+viewScroll.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/viewScroll.js
+END
+view.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/projects/!svn/ver/9907/ecom/www/lib/angular-ui-router/src/view.js
+END

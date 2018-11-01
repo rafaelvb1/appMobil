@@ -1,0 +1,44 @@
+<ion-view view-title="Add Form" cache-view="false">
+    <div class="bar bar-header bar-light">
+        <ion-nav-bar>
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+
+        </ion-nav-bar>
+    </div>
+    <ion-content class="login-bg">
+        <form name="questionForm" ng-submit="nextQue(questionForm.$valid)" novalidate>
+            <div class="addform-box-con">
+                <div class="count-div">{{count}}</div>
+                <h4>{{data.Question_name}}</h4>
+                <label class="item item-input" ng-if="data.Question_Input_Type == '1'">
+                    <input type="text" placeholder="Answer" name="question_ans" ng-model="form.question_ans" required>
+                </label>
+                <label class="item item-input" ng-if="data.Question_Input_Type == '2'">
+                    <input type="date" placeholder="Answer" name="question_ans" ng-model="form.question_ans" required>
+                </label>
+                <label class = "item item-input item-select" ng-if="data.Question_Input_Type == '3'">
+                    <div class = "input-label">
+                        Select
+                    </div>
+
+                    <select  name="question_ans" ng-model="form.question_ans" required>
+                        <option value="{{ops.op_name}}" ng-repeat="ops in data.dropOptions">{{ops.op_name}}</option>
+                    </select>
+                </label>
+                <span class="" ng-show="submitted && questionForm.question_ans.$error.required && byPass==''">Please enter answer.</span>
+                <div class="row">
+                    <div class="col col-50" ng-if="currentIndex != 0" ng-click="back()">
+                        <a  class="button" href="javascript:;" ><h4>Back</h4></a>
+                    </div>
+                    <div class="col col-50" ng-if="currentIndex == 0" ng-click="prompt()">
+                        <a  class="button" href="javascript:;" ><h4>Back</h4></a>
+                    </div>
+                    <div class="col col-50">
+                        <input type="submit" name="submit" value="Next" class="button" ng-click="submitted = true">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

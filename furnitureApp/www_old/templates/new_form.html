@@ -1,0 +1,59 @@
+<ion-view view-title="New Form" cache-view="false">
+    <div class="bar bar-header bar-light">
+        <ion-nav-bar>
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+
+        </ion-nav-bar>
+    </div>
+    <ion-content class="login-bg">
+        <div class="addform-box-con newForm-box">
+            <form novalidate name="newForm"  ng-submit="addText(newForm.$valid)">
+                <div class="count-div">{{count}}</div>
+                <h4>Question</h4>
+                <label class="item item-input">
+                    <input type="text" placeholder="Input goes here" name="que" ng-model="form.que" required minlength="3">
+                </label>
+                <span ng-show="submitted && newForm.que.$error.required && byPass==''">Please enter question.</span>
+                <span ng-show="submitted && newForm.que.$error.minlength && byPass==''">Please enter question minimum 3 character.</span>
+                <div class="">
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Input Type
+                        </div>
+                        <select name="options" ng-model="form.options" required>
+                            <option value="1">Text</option>
+                            <option selected value="2">Date</option>
+                            <option value="3">Drop Down</option>
+                        </select>
+                    </label>
+                </div>
+                <span ng-show="submitted && newForm.options.$error.required && byPass==''">Please select option.</span>
+                <div ng-if="form.options == 3">
+                    <div class="input-label">
+                        Options
+                    </div>
+                    <ion-radio ng-repeat="item in serverSideList"
+                               ng-value="item.value"
+                               ng-model="form.Question_Options"
+                               name="Question_Options" required>
+                        {{ item.text}}
+                    </ion-radio>
+                </div>
+                <span ng-show="submitted && newForm.Question_Options.$error.required">Please select answer options.</span>
+                <div class="row">
+                    <div class="col col-33" ng-if="currentIndex != 0" ng-click="back()">
+                        <a  class="button" href=""><h4>Back</h4></a>
+                    </div>
+                    <div class="col col-33" ng-if="currentIndex != 0" ng-click="submitted = true && finish(newForm.$valid)">
+                        <a  class="button" href="javascript:;"><h4>Finish</h4></a>
+                    </div>
+                    <div class="col col-33">
+                        <input type="submit" name="submit" value="Next" ng-click="submitted = true" class="button" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

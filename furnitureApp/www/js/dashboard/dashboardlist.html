@@ -1,0 +1,45 @@
+<ion-view view-title="Dashboard">
+<!-- <ion-nav-title class="logo" ui-sref="app.dashboard"> 
+  </ion-nav-title> -->
+  <ion-nav-title class="" ui-sref="">
+    <div class="search-bar">
+       <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+           <input type="search" placeholder="Buscar" ng-model="$parent.search.type1">
+      </label>
+    </div>
+  </ion-nav-title>
+<!--  <ion-nav-bar class="bar-stable">
+    <ion-nav-buttons side="left"><button  ng-click="toggleLeftSideMenu();" class="button button-icon button-clear ion-navicon"></button></ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+    <button class="button button-icon  icon ion-ios-search" ui-sref="app.search"></button>
+    <button class="button button-icon" ng-click="data.grid = !data.grid">
+          <i class="icon ion-grid" ng-if="!data.grid"></i>
+          <i class="icon ion-navicon" ng-if="data.grid"></i>
+        </button>
+    </ion-nav-buttons> 
+  </ion-nav-bar>-->
+  <ion-content class="dashboard has-header" overflow-scroll="" padding="">
+
+      <!--    <input type="checkbox" data-ng-model='search.type1' data-ng-true-value='8' data-ng-false-value='' /> topez &nbsp;&nbsp;&nbsp;
+        <input type="checkbox" data-ng-model='search.type2' data-ng-true-value='4' data-ng-false-value='' /> color
+ -->
+      <div class="dashboard-main-box">
+        <ion-list ng-class="{'grid-container' : data.grid , '' : !data.grid}">
+        <ion-item ng-repeat="item in productlist | filter:search.type1 | filter:search.type2" 
+                  ng-class="{'grid col col-50' : data.grid , '' : !data.grid}"
+                  class="item-remove-animate">
+                  <a href="#/app/productdetail/{{item.id_producto}}">
+                    <img width="100%" ng-src="{{item.path}}">
+                    <h4>{{ item.nombre }}</h4> 
+                  </a>
+        </ion-item>
+         <!-- <ion-item ng-class="{'grid col col-50' : data.grid , '' : !data.grid}"  ng-show="!productlist.length"
+                  class="item-remove-animate">
+                 Item not found!
+        </ion-item> -->
+      </ion-list>
+      </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,358 @@
+/* Empty. Add your own CSS if you like */
+body{
+	font-family: 'Quicksand', sans-serif!important;
+}
+a{
+    text-decoration:none;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #6e91a1;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #6e91a1;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #6e91a1;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #6e91a1;
+}
+.title.title-center.header-item {
+  background-color: #022636;
+  font-weight: lighter;
+   color: #fff;
+}
+ 
+ .bar.bar-header {
+  background-color: #022636;
+  color: #fff;
+}
+.bar-light .button.button-clear {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-color: transparent;
+  box-shadow: none;
+  color: #fff!important;
+  font-size: 17px;
+  font-weight: lighter;
+}
+.back-text {
+  display: none !important;
+}
+.login-top-icon{
+	text-align: center;
+	padding-top:70px;
+	padding-bottom: 40px;
+}
+.login-top-icon img {
+  margin: auto;
+  width: 135px;
+}
+.login-box-con .list .ng-pristine label {
+    border: 1px solid #467386;
+    border-radius: 3px;
+    color: #6e91a1;
+    font-family: "Quicksand",sans-serif !important;
+    margin-bottom: 8px;
+    width: 100%;
+}
+.login-box-input {
+  margin: auto;
+  width: 85%;
+}
+.login-button.btn {
+  background-color: #3A5662;
+  border: medium none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 14px;
+  width: 100%;
+}
+
+.login-box-input forgot {
+  float: right;
+}
+
+.login-box-input .ng-pristine.ng-valid a {
+  color: gray;
+  text-decoration: none;
+}
+.login-box-con h4 a {
+  color: #3a5662;
+  font-weight: lighter;
+  text-decoration: none;
+}
+.login-box-con h4   {
+  text-align: center; 
+  font-weight: lighter;
+ 
+  
+}
+
+.dash-box-con {
+ 
+  padding: 100px 0;
+}
+.dash-box-con h3 {
+  background-color: #27576b;
+  border-bottom: 3px solid #022635;
+  box-shadow: 0 2px 2px gray;
+  color: white;
+  font-size: 16px;
+  font-weight: lighter;
+  margin: auto auto 30px;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 70%;
+}
+
+.dash-box-con a {
+  text-decoration: none;
+}
+.myform-box-con {
+ 
+  padding: 15px 10px;
+}
+.myform-box-con .list .item span {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+.myform-box-con .list .item {
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+.myform-box-con .list .item span img{
+  width: 29px;
+}
+
+.myform-box-con .list .item h4 {
+  color: #6e91a1;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-bottom: 0;
+}
+.addform-box-con {
+  margin: auto;
+  padding: 10px;
+ 
+  width: 82%;
+}
+.count-div {
+  border: 1px solid #bbb;
+  border-radius: 50px;
+  height: 50px;
+  margin: 35px auto auto;
+  padding-top: 15px;
+  text-align: center;
+  vertical-align: middle;
+  width: 50px;
+}
+.addform-box-con > h4 {
+  color: #27576b;
+  font-weight: lighter;
+}
+.addform-box-con .row .col .button {
+  background-color: #27576b;
+  border-radius: 3px !important;
+  color: #fff;
+  margin-top: 20px;
+  width: 100%;
+}
+.addform-box-con .row{
+  padding: 0px;
+}
+.addform-box-con .row .col{
+ 
+}
+.addform-box-con .row .col .button h4 {
+   
+  color: #fff;
+   
+}
+.Confirmation-box-con {
+  padding: 10px;
+}
+.Confirmation-box-con > h4 {
+  padding-bottom: 20px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.Confirmation-box-con p {
+  color: #27576b;
+  margin: auto;
+  text-align: justify;
+  width: 74%;
+}
+.Confirmation-box-con .button {
+  background-color: #27576B;
+  color: #fff;
+  margin: 20px 0;
+}
+.Confirmation-box-con .button  h4{
+  
+  color: #fff;
+ 
+}
+
+.agreebutton-div{
+  text-align: center;
+}
+ 
+
+.info-box-con {
+  margin: auto;
+  width: 80%;
+}
+.info-box-con .list form label {
+  border: 1px solid #27576b;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+input[type='file'] {
+  opacity:0    
+}
+.info-box-con .list .item.item-input > span {
+  left: 75px;
+  position: absolute;
+  text-align: center;
+}
+
+.signuplinks{
+  text-decoration: none;
+}
+.signuplinks h4{
+  width: 100%;
+  padding:15px;
+  background-color: transparent;
+  border: 1px solid #3A5662;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.signuplinks h4:hover{
+  background-color: #3A5662;
+  border: 1px solid #3A5662;
+  color: #fff;
+ 
+}
+.myform-box-con p {
+  color: gray;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.add-btn {
+  text-align: center;
+  text-decoration: none;
+}
+.add-btn > h4 {
+  border: 1px solid #3a5662;
+  border-radius: 3px;
+  color: #3a5662;
+  margin-bottom: 30px;
+  padding: 15px 0;
+}
+.myform-box-con .list .item h4 a{
+  text-decoration: none;
+  color: #6e91a1;
+}
+
+.newForm-box h4{
+  text-align: left!important;
+}
+
+.newForm-box .row .col .button h4 {
+  color: #fff;
+  font-size: 16px;
+  padding: 4px 0;
+  text-align: center !important;
+}
+
+/*20.04.201*/
+.m-signature-pad--body {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  bottom: 60px;
+  border: 1px solid #f4f4f4;
+}
+
+.m-signature-pad--body
+  canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+  }
+
+.m-signature-pad--footer {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  height: 40px;
+}
+
+.m-signature-pad--footer
+  .description {
+    color: #C3C3C3;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 1.8em;
+  }
+
+.m-signature-pad--footer
+  .button {
+    position: absolute;
+    bottom: 0;
+  }
+
+.m-signature-pad--footer
+  .button.clear {
+    left: 0;
+  }
+
+.m-signature-pad--footer
+  .button.save {
+    right: 0;
+  }
+  
+  .addform-box-con label.item.item-input {
+    margin-bottom: 5px;
+}
+.addform-box-con span {
+    text-align: left!important;
+    width: 100%;
+    color: red;
+}
+.bar .title.title-left {
+    text-align: center;
+    color: #fff;
+    font-weight: lighter;
+}
+
+#loginForm .forgot {
+    float: right;
+}
+#loginForm .forgot a {
+    text-decoration:none;
+    color:gray;
+}
+.validation-login.popup-forvalidation {
+    padding-bottom: 10px;
+    display: block;
+    color: red;
+}
+
+.login-bg span{
+    color:red;
+}

@@ -1,0 +1,56 @@
+<ion-view view-title="Additional Info" cache-view="false">
+    <div class="bar bar-header bar-light">
+        <ion-nav-bar>
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+        </ion-nav-bar>
+    </div>
+    <ion-content class="login-bg">
+        <div class="list list-inset">
+            <form name="infoForm" ng-submit="submitInfo(infoForm.$valid)" novalidate>
+                <label class="item item-input">
+                  <input type="text" placeholder="Full Name" name="full_name" ng-model="formData.full_name" required>
+                </label>
+                <span ng-show="submitted && infoForm.full_name.$error.required || formData.full_name=='' && addme">Please enter full name</span>
+                <label class="item item-input">
+                  <input type="email" placeholder="Email" name="infouser_email" ng-model="formData.infouser_email" required>
+                </label>
+                <span ng-show="submitted && infoForm.infouser_email.$error.required || formData.infouser_email=='' && addme">Please enter emailId</span>
+                <span ng-show="submitted && infoForm.infouser_email.$error.email">Please enter valid emaild id</span>
+                <label class="item item-input">
+                  <input type="text" placeholder="Position" name="infouser_position" ng-model="formData.infouser_position" required>
+                </label>
+                <span ng-show="submitted && infoForm.infouser_position.$error.required || formData.infouser_position == '' && addme">Please enter position</span>
+                <label class="item item-input">
+                  <input type="number" placeholder="Phone Number" name="infouser_contact_number" required ng-model="formData.infouser_contact_number">
+                </label>
+                <span ng-show="submitted && infoForm.infouser_contact_number.$error.required || formData.infouser_contact_number == '' && addme">Please enter contact number.</span>
+                <h4>Signature</h4>	
+                <div class="signature-canwas">
+                  <canvas id='signatureCanvas' width='300px' height='180' style='border: 1px solid #ddd;'></canvas>
+                  
+                  <br/>
+
+                </div>
+<!--                <div class='button-bar'>
+                    <a class='button button-energized' ng-click='clearCanvas()'>Clear</a>
+                    <a class='button button-balanced' ng-click='addSign()'>Add</a>
+                </div>-->
+                <div class="row">
+                    <div class="col">
+                       <a style="text-align:center;" class=' login-button btn col' ng-click='clearCanvas()'>Clear</a>
+                    </div>
+                    <div class="col">
+                       <input ng-click="submitted = true" type="submit"  value=" Finish" class=" login-button btn col"> 
+                    </div>
+                    <div class="col" > <a style="text-align:center;" ng-click="addSign()" href="javascript:;" class=" login-button btn col">Add</a>
+                 </div>                 
+                  <!--<a ng-click="//addSign()" href="javascript:;" class="login-button btn">Finish</a>-->
+
+            </form>
+        </div>
+        <div ng-if="img">
+            <img src="{{img}}">
+        </div>
+    </ion-content>
+</ion-view>

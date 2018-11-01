@@ -1,0 +1,41 @@
+{
+  "name": "devdactic-signature",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/UserLogin",
+      "proxyUrl": "http://localhost/appFlow/appservices/services/login.php"
+    },
+    {
+      "path": "/saveTemp",
+      "proxyUrl": "http://localhost/appFlow/appservices/services/save_template.php"
+    },
+    {
+      "path": "/MyForm",
+      "proxyUrl": "http://localhost/appFlow/appservices/services/templates_list.php"
+    },
+    {
+      "path": "/Questions",
+      "proxyUrl": "http://localhost/appFlow/appservices/services/questions_list.php"
+    },
+    {
+      "path": "/addInfo",
+      "proxyUrl": "http://localhost/appFlow/appservices/services/submitQuiz.php"
+    },
+    {
+      "path": "/addSign",
+      "proxyUrl": "http://localhost/appFlow/appservices/services/addSign.php"
+    }
+  ],
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "pro_id": "09c5c1a1",
+  "app_id": ""
+}
