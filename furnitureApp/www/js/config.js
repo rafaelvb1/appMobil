@@ -1,5 +1,7 @@
 var baseUrl = "http://distincion.mx/api/";
 
+//var baseUrl = "http://192.168.1.120/distincion/api/";
+
 //Vendor
 var userLoginState = baseUrl+"vendedor/validarCredencialesVendedor/";
 var userRegisterState = baseUrl+"vendedor/guardarVendedor/";
@@ -11,6 +13,8 @@ var userUpdateState = baseUrl+"vendedor/userupdate/";
 var addvisitedUser = baseUrl+"vendedor/guardarVisita/";
 
 var productRelatedData = baseUrl+"vendedor/getproductrelatedinfo/";
+
+var productosPorTienda = baseUrl+"vendedor/obtenerMueblesPorTienda/";
 var detailproduct = baseUrl+"vendedor/detailproduct/";
 
 //Catalog

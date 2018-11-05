@@ -25,35 +25,36 @@
            
 	      <div class="caractestics">
 	        <div class = "row">
-				<div class = "col-50">Tapiz</div>
-				<div class = "col-50">{{productdetail.detail[0].tapiz_nombre}}</div>		 
+				<div class = "col-80">Tapiz: {{productdetail.detail[0].tapiz_nombre}}, Color: {{productdetail.detail[0].color_cat}},</div>
+				
+					 
+			</div>
+			<div class = "row">
+				
+				<div class = "col-80"><h5><a href="#" ng-click = "openModal()">Mecanismo: {{productdetail.detail[0].mecanismo_nombre}}<i class="icon ion-ios-photos" ng-click = "openModal()"></i>,</a></h5></div>
+				
+			</div>
+			<div class = "row" ng-if="productdetail.detail[0].masaje_nombre!=null">
+				
+					<div class = "col-80"><h5><a href="#" ng-click = "openModal()">Masaje: {{productdetail.detail[0].masaje_nombre}}<i class="icon ion-ios-photos" ng-click = "openModal()"></i>,</a></h5></div>
+					
+				</div>
+
+			
+
+			
+
+			<div class = "row">
+				<div class = "col-(0">Alto:{{productdetail.detail[0].alto}}, Profundidad:{{productdetail.detail[0].profundo}}, Ancho:{{productdetail.detail[0].ancho}}</div>
+				
 			</div>
 
 			<div class = "row">
-				<div class = "col-50">Mecanismo</div>
-				<div class = "col-50">{{productdetail.detail[0].mecanismo_nombre}}</div>		 
+				<div class = "col-80">sku:{{productdetail.detail[0].sku}}</div>
+				
 			</div>
+			
 
-			<div class = "row">
-				<div class = "col-50">Color</div>
-				<div class = "col-50">{{productdetail.detail[0].color_cat}}</div>		 
-			</div>
-
-			<div class = "row">
-				<div class = "col-50">Alto</div>
-				<div class = "col-50">{{productdetail.detail[0].alto}}</div>		 
-			</div>
-
-			<div class = "row">
-				<div class = "col-50">Profundidad</div>
-				<div class = "col-50">{{productdetail.detail[0].profundo}}</div>		 
-			</div>
-
-			<div class = "row">
-				<div class = "col-50">Ancho</div>
-				<div class = "col-50">{{productdetail.detail[0].ancho}}</div>		 
-			</div>
-			{{ productdetail.detail[0].ancho }}
 
 		     
 	      </div>
@@ -65,5 +66,3 @@
 		
 	</ion-content>
 
-
-</ion-view>
