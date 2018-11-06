@@ -1,44 +1,44 @@
 <ion-view title="Bienvenidos -- Distinción" hide-back-button="true" cache-view="false" class="common-login-modal">
-    <ion-content scroll="true" class="loginmodal">
-
-        <div class="login-container">
-
-        <div class = "col button-row text-center">
-            <!-- <h1 class="title">Bienvenidos -- Distinción</h1> -->
-           <!--  <button class="button icon ion-social-facebook custombtn" ng-click="facebooklogin();"></button> -->
-           <img width="200px" src="img/logo.png">
-        </div>
-
-            <div class="firstordiv">
-                <div  class="firstordiv-border"></div>
-               <!--  <span><strong>or</strong></span> -->
+        <ion-content scroll="true" class="loginmodal">
+    
+            <div class="login-container">
+    
+            <div class = "col button-row text-center">
+                <!-- <h1 class="title">Bienvenidos -- Distinción</h1> -->
+               <!--  <button class="button icon ion-social-facebook custombtn" ng-click="facebooklogin();"></button> -->
+               <img width="200px" src="img/logo.png">
             </div>
-
-            <form name="loginForm" class="formStyle padding" ng-submit="userLogin(loginForm);" novalidate >
-                <label class="item item-input">
-                    <input type="email" placeholder="Correo" name="username" ng-model="logindata.username" required>
-                </label>
-             
-
-                <label class="item item-input">
-                    <input type="password" placeholder="Contraseña" name="password" ng-model="logindata.password" required>
-                </label>
-               
-
-                 <button class="button button-block  icon ion-log-in button-shadow" ng-disabled="loginForm.$invalid" id="submitbutton">Login</button>
-                 <div class="row bottom-section">
-                     <div class = "col text-center"><a href="#/forgetpass">Recuperar Contraseña</a></div>
-                    <div class = "col text-center link-color"><a href="#/register">¡Registrate ya!</a></div>
+    
+                <div class="firstordiv">
+                    <div  class="firstordiv-border"></div>
+                   <!--  <span><strong>or</strong></span> -->
                 </div>
-            </form>
-        </div>
-        <script id="error-list.html" type="text/ng-template">
-            <div class="error" ng-message="email">  Please enter a valid email address  </div>
-        </script>
-
-        <script id="password-validate.html" type="text/ng-template">
-            <div class="error" ng-message="minlength">  Minimum length of this field is 8 characters! </div>
-            <div class="error" ng-message="maxlength">  Maximum length of this field is 15 characters!  </div>
-        </script>
-    </ion-content>
+    
+                <form name="loginForm" class="formStyle padding" ng-submit="userLogin(loginForm);" novalidate >
+                    <label class="item item-input">
+                        <input type="email" placeholder="Correo" name="username" ng-model="logindata.username" required>
+                    </label>
+                 
+    
+                    <label class="item item-input">
+                        <input type="password" placeholder="Contraseña" name="password" ng-model="logindata.password" required>
+                    </label>
+                   
+    
+                     <button class="button button-block  icon ion-log-in button-shadow"   ng-disabled="loginForm.$invalid" id="submitbutton">Login</button>
+                     <div class="row bottom-section">
+                         <div class = "col text-center"><a href="#/forgetpass">Recuperar Contraseña</a></div>
+                        <div class = "col text-center link-color"><a href="#/register">¡Registrate ya!</a></div>
+                    </div>
+                </form>
+            </div>
+            <script id="error-list.html" type="text/ng-template">
+                <div class="error" ng-message="email">  Please enter a valid email address  </div>
+            </script>
+    
+            <script id="password-validate.html" type="text/ng-template">
+                <div class="error" ng-message="minlength">  Minimum length of this field is 8 characters! </div>
+                <div class="error" ng-message="maxlength">  Maximum length of this field is 15 characters!  </div>
+            </script>
+        </ion-content>
 </ion-view>
