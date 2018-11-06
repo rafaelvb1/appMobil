@@ -48,7 +48,8 @@ angular.module('starter.controllers')
         var userid = localStorage.getItem("User_Id");
         $scope.visiteduserdata = {
           user_id: userid,
-          furniture_id: proId
+          furniture_id: proId,
+          type_visit: 'detalle'
         };
         dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
           if (response.status == "true") {
