@@ -60,6 +60,23 @@ angular.module('starter.controllers')
           console.log(error);
         });
       }
+      $scope.visitedMecanismo = function (proId) {
+        var userid = localStorage.getItem("User_Id");
+        $scope.visiteduserdata = {
+          user_id: userid,
+          furniture_id: proId,
+          type_visit: 'mecanismo'
+        };
+        dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+          if (response.status == "true") {
+            console.log(response.message);
+          } else {
+            console.log(response.message);
+          }
+        }, function (error) {
+          console.log(error);
+        });
+      }
 
       $scope.myproduct = function (proId) {
 
@@ -241,9 +258,47 @@ angular.module('starter.controllers')
         scope: $scope,
         animation: 'slide-in-up',
      }).then(function(modal) {$scope.modal = modal;});
-     $scope.openModal = function() {
+     $scope.openModalMecanismo = function(proId) {
       $scope.mecanismo='Pruebaq';
-        $scope.modal.show();  };
+        $scope.modal.show();  
+        var userid = localStorage.getItem("User_Id");
+        $scope.visiteduserdata = {
+          user_id: userid,
+          furniture_id: proId,
+          type_visit: 'mecanismo'
+        };
+        dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+          if (response.status == "true") {
+            console.log(response.message);
+          } else {
+            console.log(response.message);
+          }
+        }, function (error) {
+          console.log(error);
+        });
+      
+      };
+      $scope.openModalMasaje = function(proId) {
+        $scope.mecanismo='Pruebaq';
+          $scope.modal.show();  
+          var userid = localStorage.getItem("User_Id");
+          $scope.visiteduserdata = {
+            user_id: userid,
+            furniture_id: proId,
+            type_visit: 'masaje'
+          };
+          dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+            if (response.status == "true") {
+              console.log(response.message);
+            } else {
+              console.log(response.message);
+            }
+          }, function (error) {
+            console.log(error);
+          });
+        
+        };
+
      $scope.closeModal = function() {
         $scope.modal.hide(); 
         $scope.modal.remove();

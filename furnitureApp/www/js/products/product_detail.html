@@ -31,12 +31,12 @@
 			</div>
 			<div class = "row">
 				
-				<div class = "col-80"><h5><a href="#" ng-click = "openModal()">Mecanismo: {{productdetail.detail[0].mecanismo_nombre}}<i class="icon ion-ios-photos" ng-click = "openModal()"></i>,</a></h5></div>
+				<div class = "col-80"><h5><a href="#" ng-click = "openModalMecanismo(productdetail.detail[0].mecanismo_id)">Mecanismo: {{productdetail.detail[0].mecanismo_nombre}}<i class="icon ion-ios-photos" ng-click = "openModal()"></i>,</a></h5></div>
 				
 			</div>
 			<div class = "row" ng-if="productdetail.detail[0].masaje_nombre!=null">
 				
-					<div class = "col-80"><h5><a href="#" ng-click = "openModal()">Masaje: {{productdetail.detail[0].masaje_nombre}}<i class="icon ion-ios-photos" ng-click = "openModal()"></i>,</a></h5></div>
+					<div class = "col-80"><h5><a href="#" ng-click = "openModalMasaje(productdetail.detail[0].masaje_id)">Masaje: {{productdetail.detail[0].masaje_nombre}}<i class="icon ion-ios-photos" ng-click = "openModal()"></i>,</a></h5></div>
 					
 				</div>
 
