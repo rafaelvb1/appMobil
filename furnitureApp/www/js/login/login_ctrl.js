@@ -50,6 +50,24 @@ angular.module('starter.controllers')
                      }
              }
 
+             $scope.visitedLogin = function () {
+                var userid = localStorage.getItem("User_Id");
+                $scope.visiteduserdata = {
+                  user_id: userid,
+                  furniture_id: '',
+                  type_visit: 'login'
+                };
+                dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+                  if (response.status == "true") {
+                    console.log(response.message);
+                  } else {
+                    console.log(response.message);
+                  }
+                }, function (error) {
+                  console.log(error);
+                });
+              }
+
              /*Facebook login*/
              $scope.facebooklogin = function () {
                     $cordovaOauth.facebook("1614759508837273", ["email", "read_stream", "user_website", "user_location", "user_relationships"]).then(function (result) {
