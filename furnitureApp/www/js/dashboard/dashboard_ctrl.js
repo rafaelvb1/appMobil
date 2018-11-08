@@ -33,7 +33,7 @@ angular.module('starter.controllers')
   
 
   $scope.cargaListaProductos = function(result) { 
-    
+
   var store_id = localStorage.getItem("store_id"); 
   dataManager.get(productosPorTienda+store_id).then(function(response){
     if(response != null){
@@ -310,7 +310,7 @@ angular.module('starter.controllers')
       $rootScope.productlist = items;
 
   }
-$scope.cargaListaProductos();
+
   $scope.$on("$ionicView.enter", function(){
     $scope.cargaListaProductos();
     })
