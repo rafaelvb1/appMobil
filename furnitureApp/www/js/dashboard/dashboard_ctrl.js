@@ -310,7 +310,7 @@ angular.module('starter.controllers')
       $rootScope.productlist = items;
 
   }
-
+  $scope.cargaListaProductos();
   $scope.$on("$ionicView.enter", function(){
     $scope.cargaListaProductos();
     })
