@@ -29,8 +29,12 @@ angular.module('starter.controllers')
   $rootScope.imagePath="http://distincion.mx/img.muebles/";;
   //Llamada dos
 
-  var store_id = localStorage.getItem("store_id"); 
 
+  
+
+  $scope.cargaListaProductos = function(result) { 
+
+  var store_id = localStorage.getItem("store_id"); 
   dataManager.get(productosPorTienda+store_id).then(function(response){
     if(response != null){
       $rootScope.productlist =response;
@@ -41,6 +45,8 @@ angular.module('starter.controllers')
   }, function(error){
       console.log(error);
   });
+  };
+  
 
   //Fin llamada dos
 
@@ -304,7 +310,13 @@ angular.module('starter.controllers')
       $rootScope.productlist = items;
 
   }
+
+  $scope.$on("$ionicView.enter", function(){
+    $scope.cargaListaProductos();
+    })
 })
+
+
 
 });
 
