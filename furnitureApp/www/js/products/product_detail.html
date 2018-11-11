@@ -1,68 +1,64 @@
 <ion-view style="" id="" title="">
-	<!-- <ion-nav-title ui-sref="app.dashboard">Product Detail</ion-nav-title> -->
-	<ion-nav-title class="" ui-sref="">
-   <!--  <div class="search-bar">
+  <!-- <ion-nav-title ui-sref="app.dashboard">Product Detail</ion-nav-title> -->
+  <ion-nav-title class="" ui-sref="">
+    <!--  <div class="search-bar">
        <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
         <input type="text" placeholder="Buscar">
       </label>
     </div> -->
   </ion-nav-title>
-		
-    <ion-content class="product_detail_listing">
-        <div class="product_name_d">
-			 <p class="item-description">{{productdetail.detail[0].nombre}}</p>
+  <ion-content class="product_detail_listing">
+    <div class="product_name_d">
+      <p class="item-description">{{productdetail.detail[0].nombre}}</p>
+    </div>
+    <ion-slide-box>
+      <ion-slide ng-repeat="image in  productdetail.images">
+        <img style="width: 100vw; height: auto;" ng-src="{{image.path}}" />
+      </ion-slide>
+    </ion-slide-box>
+    <br>
+    <p class="caractestics-head">Características</p>
+    <div class="caractestics">
+      <div class="row">
+        <div class="col-80">Tapiz: {{productdetail.detail[0].tapiz_nombre}}, Color:
+          {{productdetail.detail[0].color_cat}},</div>
+	  </div>
+	  <br>
+      <div class="row">
+        <div class="col-80">
+          <h5><a href="#" ng-click="openModalMecanismo(productdetail.detail[0].mecanismo_id)">Mecanismo:
+              {{productdetail.detail[0].mecanismo_nombre}}<i class="icon ion-ios-photos" ng-click="openModalMecanismo(productdetail.detail[0].mecanismo_id)"></i>,</a></h5>
+        </div>
+	  </div>
+	  <br>
+      <div class="row" ng-if="productdetail.detail[0].masaje_nombre!=null">
+        <div class="col-80">
+          <h5 ng-click="openModalMasaje(productdetail.detail[0].masaje_id)">Masaje:
+              {{productdetail.detail[0].masaje_nombre}}<i class="icon ion-ios-photos" ng-click="openModalMasaje(productdetail.detail[0].masaje_id)"></i>,</h5>
+				<br>
+				id ==== 
+				{{productdetail.detail[0].masaje_id}}
+			</div>
+	  </div>
+	  <br>
+      <div class="row">
+        <div class="col-80">Alto:{{productdetail.detail[0].alto}}, Profundidad:{{productdetail.detail[0].profundo}},
+          Ancho:{{productdetail.detail[0].ancho}}</div>
+	  </div>
+	  <br>
+      <div class="row">
+        <div class="col-80">sku:{{productdetail.detail[0].sku}}</div>
+	  </div>
+	  <div class="row">
+        <div class="col-80">
+			<a href="#" ng-click="">Pedido Especial</a>
 		</div>
-		<ion-slide-box>
-				<ion-slide ng-repeat="image in  productdetail.images">
-							<img style="width: 100vw; height: auto;" ng-src="{{image.path}}" />
-				</ion-slide>
-			</ion-slide-box>
-
-
-          <br>
-          <p class="caractestics-head">Características</p>
-           
-	      <div class="caractestics">
-	        <div class = "row">
-				<div class = "col-80">Tapiz: {{productdetail.detail[0].tapiz_nombre}}, Color: {{productdetail.detail[0].color_cat}},</div>
-				
-					 
-			</div>
-			<div class = "row">
-				
-				<div class = "col-80"><h5><a href="#" ng-click = "openModalMecanismo(productdetail.detail[0].mecanismo_id)">Mecanismo: {{productdetail.detail[0].mecanismo_nombre}}<i class="icon ion-ios-photos" ng-click = "openModalMecanismo(productdetail.detail[0].mecanismo_id)"></i>,</a></h5></div>
-				
-			</div>
-			<div class = "row" ng-if="productdetail.detail[0].masaje_nombre!=null">
-				
-					<div class = "col-80"><h5><a href="#" ng-click = "openModalMasaje(productdetail.detail[0].masaje_id)">Masaje: {{productdetail.detail[0].masaje_nombre}}<i class="icon ion-ios-photos" ng-click = "openModalMasaje(productdetail.detail[0].masaje_id)"></i>,</a></h5></div>
-					
-				</div>
-
-			
-
-			
-
-			<div class = "row">
-				<div class = "col-(0">Alto:{{productdetail.detail[0].alto}}, Profundidad:{{productdetail.detail[0].profundo}}, Ancho:{{productdetail.detail[0].ancho}}</div>
-				
-			</div>
-
-			<div class = "row">
-				<div class = "col-80">sku:{{productdetail.detail[0].sku}}</div>
-				
-			</div>
-			
-
-
-		     
-	      </div>
-	      	<br>
-	     <!--  <div class="product-related-vedio video-section" ng-init="makeAction"> 
+	  </div>
+	  <br>
+    </div>
+    <br>
+    <!--  <div class="product-related-vedio video-section" ng-init="makeAction"> 
              <video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer"><source src="https://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4" type="video/mp4"/></video>
         </div>    -->
- 
-		
-	</ion-content>
-
+  </ion-content>

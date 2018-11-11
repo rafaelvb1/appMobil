@@ -27,7 +27,7 @@ angular.module('starter.controllers')
                                 localStorage.setItem("User_Id", $scope.states.id_vendedor);
                                 localStorage.setItem("store_id", $scope.states.tienda_id);
                                 $window.location.href = '#/app/dashboardlist';
-
+                                $scope.visitedLogin(); 
                                 //or $state.go("app.dashboard")
                             } else {
                                 $cordovaToast.showLongBottom(response.message);
@@ -49,6 +49,24 @@ angular.module('starter.controllers')
                         
                      }
              }
+
+             $scope.visitedLogin = function () {
+                var userid = localStorage.getItem("User_Id");
+                $scope.visiteduserdata = {
+                  user_id: userid,
+                  furniture_id: '',
+                  type_visit: 'login'
+                };
+                dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+                  if (response.status == "true") {
+                    console.log(response.message);
+                  } else {
+                    console.log(response.message);
+                  }
+                }, function (error) {
+                  console.log(error);
+                });
+              }
 
              /*Facebook login*/
              $scope.facebooklogin = function () {

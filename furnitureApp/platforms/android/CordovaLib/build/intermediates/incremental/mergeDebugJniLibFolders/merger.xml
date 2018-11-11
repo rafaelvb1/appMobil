@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/Nelly/proyectos/jesus/muebleria/hectorUltimo/furnitureApp/platforms/android/CordovaLib/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/Nelly/proyectos/jesus/muebleria/hectorUltimo/furnitureApp/platforms/android/CordovaLib/src/debug/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Appfurniture\appMobil\furnitureApp\platforms\android\CordovaLib\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Appfurniture\appMobil\furnitureApp\platforms\android\CordovaLib\src\debug\jniLibs"/></dataSet></merger>

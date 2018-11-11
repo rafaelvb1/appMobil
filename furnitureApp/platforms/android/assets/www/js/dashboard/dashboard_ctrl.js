@@ -26,10 +26,26 @@ angular.module('starter.controllers')
     var imagePath = "'img/no-image.png'";
     //var imagePath =  $location.path()+'/no-image.jpg' ;
   }
+  $rootScope.imagePath="http://distincion.mx/img.muebles/";;
+  //Llamada dos
 
+  var store_id = localStorage.getItem("store_id"); 
+
+  dataManager.get(productosPorTienda+store_id).then(function(response){
+    if(response != null){
+      $rootScope.productlist =response;
+    }else {
+      console.log(response);
+    }
+   
+  }, function(error){
+      console.log(error);
+  });
+
+  //Fin llamada dos
 
  // get product related data
- if($cordovaNetwork.isOnline() == true){
+ if($cordovaNetwork.isOnline() == true && false){
    
      $cordovaSQLite.execute(db,"DROP TABLE IF EXIST productos");
      $cordovaSQLite.execute(db,"DROP TABLE IF EXIST producto_tienda");
@@ -172,8 +188,8 @@ angular.module('starter.controllers')
                     });
 
       $cordovaSQLite.execute(db, query).then(function(data) {
-         $rootScope.productlist = $scope.getAll(data);
-         $rootScope.productlistMain = $rootScope.productlist;
+        // $rootScope.productlist = $scope.getAll(data);
+         //$rootScope.productlistMain = $rootScope.productlist;
          $ionicLoading.hide();
        //  console.error('product list 2' + JSON.stringify($rootScope.productlist));
       }, function (err) {

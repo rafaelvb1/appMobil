@@ -48,7 +48,25 @@ angular.module('starter.controllers')
         var userid = localStorage.getItem("User_Id");
         $scope.visiteduserdata = {
           user_id: userid,
-          furniture_id: proId
+          furniture_id: proId,
+          type_visit: 'detalle'
+        };
+        dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+          if (response.status == "true") {
+            console.log(response.message);
+          } else {
+            console.log(response.message);
+          }
+        }, function (error) {
+          console.log(error);
+        });
+      }
+      $scope.visitedMecanismo = function (proId) {
+        var userid = localStorage.getItem("User_Id");
+        $scope.visiteduserdata = {
+          user_id: userid,
+          furniture_id: proId,
+          type_visit: 'mecanismo'
         };
         dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
           if (response.status == "true") {
@@ -187,8 +205,112 @@ angular.module('starter.controllers')
         $scope.myproduct(proId);
 
       }
+      $scope.getProductDetail2 = function (proId) {
 
-      $scope.getProductDetail($stateParams.prId);
+        $ionicLoading.show({
+          content: 'Loading',
+          animation: 'fade-in',
+          showBackdrop: true,
+          maxWidth: 200,
+          showDelay: 0
+        });
+
+        $scope.productdetail = {};
+
+        dataManager.get(productdetail+"/"+proId).then(function (response) {
+          console.log("entro en detalle producto");
+          if (response.status == "true") {
+            console.log("error 3");
+            $scope.productdetail.detail = response.data;
+            $scope.productdetail.images = response.data.fotos;
+            $scope.visitedUser(proId);
+            $ionicLoading.hide();
+
+          }else{
+            console.log("error al llamar "+"etailproduct/proId"+ "(Mensaje):" + response.message);
+          }
+
+        }, function (error) {
+            console.log("error 3" + error);
+        });
+
+
+        /*var query = "SELECT id_foto, (" + imagePath + ") as path, orden, producto_id FROM producto_fotos WHERE producto_id = " + proId + " ORDER BY orden ASC";
+        console.log('image query ' + query);
+        $cordovaSQLite.execute(db, query).then(function (data) {
+          $scope.productdetail.images = $scope.getAll(data);
+        }, function (err) {
+          // console.error("ctg_masaje error" + JSON.stringify(err));
+        });*/
+
+       /* var query = 'SELECT pro.id_producto, pro.nombre, pro.ancho, pro.alto, pro.profundo, pro.sku, pro.color_id, pro.tapiz_id, pro.mecanismo_id, pro.categoria_id, pro.masaje_id, pro.estatus, cat.nombre nombre_cat, col.nombre color_cat, tapiz.nombre tapiz_nombre, meca.nombre mecanismo_nombre, masaje.nombre masaje_nombre, pro.usuario_creacion creado_por,  pro.fecha_creacion  FROM  productos pro inner join ctg_categorias cat on cat.id = pro.categoria_id inner join ctg_colores col on col.id = pro.color_id inner join ctg_tapiz tapiz on tapiz.id = pro.tapiz_id inner join ctg_mecanismos meca on meca.id = pro.mecanismo_id left join  ctg_masaje masaje on masaje.id = pro.masaje_id  WHERE pro.id_producto = ' + proId + ' order by cat.nombre,pro.nombre asc';
+        console.log("query" + query);
+        $cordovaSQLite.execute(db, query).then(function (data) {
+          $scope.productdetail.detail = $scope.getAll(data);
+          $scope.visitedUser(proId);
+          $ionicLoading.hide();
+        }, function (err) {
+          // console.error("product new error " + JSON.stringify(err));
+        });*/
+      }
+
+
+      $ionicModal.fromTemplateUrl('js/products/modal-mecanismo.html', {
+        scope: $scope,
+        animation: 'slide-in-up',
+     }).then(function(modal) {$scope.modal = modal;});
+
+     $scope.openModalMecanismo = function(proId) {
+      // $scope.mecanismo='Pruebaq';
+         $scope.modal.show();  
+      //   var userid = localStorage.getItem("User_Id");
+      //   $scope.visiteduserdata = {
+      //     user_id: userid,
+      //     furniture_id: proId,
+      //     type_visit: 'mecanismo'
+      //   };
+      //   dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+      //     if (response.status == "true") {
+      //       console.log(response.message);
+      //     } else {
+      //       console.log(response.message);
+      //     }
+      //   }, function (error) {
+      //     console.log(error);
+      //   });
+      
+      };
+
+      $scope.openModalMasaje = function(proId) {
+        // $scope.mecanismo='Pruebaq';
+          $scope.modal.show();  
+        //   var userid = localStorage.getItem("User_Id");
+        //   $scope.visiteduserdata = {
+        //     user_id: userid,
+        //     furniture_id: proId,
+        //     type_visit: 'masaje'
+        //   };
+        //   dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+        //     if (response.status == "true") {
+        //       console.log(response.message);
+        //     } else {
+        //       console.log(response.message);
+        //     }
+        //   }, function (error) {
+        //     console.log(error);
+        //   });
+        
+        };
+
+     $scope.closeModal = function() {
+        $scope.modal.hide(); 
+        $scope.modal.remove();
+       };
+
+     
+
+
+      $scope.getProductDetail2($stateParams.prId);
 
 
 

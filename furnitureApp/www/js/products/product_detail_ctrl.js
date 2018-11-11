@@ -259,6 +259,7 @@ angular.module('starter.controllers')
         scope: $scope,
         animation: 'slide-in-up',
      }).then(function(modal) {$scope.modal = modal;});
+
      $scope.openModalMecanismo = function(proId) {
       $scope.mecanismo='Pruebaq';
         $scope.modal.show();  
@@ -279,6 +280,7 @@ angular.module('starter.controllers')
         });
       
       };
+      
       $scope.openModalMasaje = function(proId) {
         $scope.mecanismo='Pruebaq';
           $scope.modal.show();  
