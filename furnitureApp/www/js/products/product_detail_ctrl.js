@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
 
-  .controller('ProductDetailCtrl', function ($ionicLoading, $cordovaNetwork, $scope, $rootScope, $ionicModal, $ionicPopover, $ionicSlideBoxDelegate, $stateParams, $location, $state, productsService, eCart, alertmsgService, dataManager, $cordovaToast, $cordovaSQLite, $ionicPlatform, $timeout) {
+  .controller('ProductDetailCtrl', function ($ionicLoading, $cordovaNetwork, $scope, $rootScope, $ionicModal, $ionicPopover, $ionicSlideBoxDelegate, $stateParams, $location, $state, productsService, eCart, alertmsgService, dataManager, $cordovaToast, $cordovaSQLite, $ionicPlatform, $timeout, $sce) {
 
     $ionicPlatform.ready(function () {
 
@@ -219,7 +219,7 @@ angular.module('starter.controllers')
         $scope.productdetailfull = {};
         $scope.productdetail = {};
 
-        dataManager.get(productdetailfull+"/"+fId+"/"+proId).then(function (response) {
+        dataManager.get(productdetailfull+fId+"/"+proId).then(function (response) {
           console.log("entro en full detalle producto");
           if (response.status == "true") {
             console.log("error 4");
@@ -294,13 +294,14 @@ angular.module('starter.controllers')
 
 
       
-
-     $scope.openModalMecanismo = function(proId) {
-
-      $ionicModal.fromTemplateUrl('js/products/modal-mecanismo.html', {
+    $ionicModal.fromTemplateUrl('js/products/modal-mecanismo.html', {
         scope: $scope,
         animation: 'slide-in-up',
      }).then(function(modal) {$scope.modal = modal;});
+
+     $scope.openModalMecanismo = function(proId) {
+
+     
 
       $scope.mecanismo='Pruebaq';
         $scope.modal.show();  
@@ -321,13 +322,17 @@ angular.module('starter.controllers')
         });
       
       };
-      
-      $scope.openModalMasaje = function(proId) {
 
-        $ionicModal.fromTemplateUrl('js/products/modal-masaje.html', {
-          scope: $scope,
-          animation: 'slide-in-up',
-       }).then(function(modal) {$scope.modal2 = modal;});
+      $scope.trustSrc = function(src) {  
+        return $sce.trustAsResourceUrl(src);  
+      } 
+      
+      $ionicModal.fromTemplateUrl('js/products/modal-masaje.html', {
+        scope: $scope,
+        animation: 'slide-in-up',
+     }).then(function(modal) {$scope.modal2 = modal;});
+
+      $scope.openModalMasaje = function(proId) {
 
         $scope.mecanismo='Pruebaq';
           $scope.modal2.show();  

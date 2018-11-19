@@ -1,12 +1,8 @@
 <ion-modal-view class="modal-half">
-	<h3>Mecanismo:{{productdetail.detail[0].mecanismo_nombre}}</h3>
-		<ion-scroll direction="x" class="catScroll" >
-                <iframe width="400" height="315" src="https://www.youtube.com/embed/tRZ746aP3iQ" frameborder="0" allowfullscreen></iframe>
-			<div class="image-modal" ng-repeat="tmpObj in products">
-				<img class="full-image" ng-src="{{tmpObj.product_image!=null ? tmpObj.product_image : 'img/no-image.jpg' }}">
-				<p class="item-brand">{{tmpObj.product_name}}</p>
-				<p class="item-price"><span class="actual-price"><i class="icon {{currencyIcon}}" aria-hidden="true"></i>{{tmpObj.actual_price}}</span> </p>
-			</div>
-		</ion-scroll>
+	<h3>Masaje:{{productdetail.detail[0].masaje_nombre}}</h3>
+	<ion-scroll direction="x" class="catScroll" >
+			<iframe ng-if="productdetail.detail.tipoMasaje==='v'" width="400" height="315" ng-src="{{trustSrc(productdetail.detail.datoMasaje[0].path)}}" frameborder="0" allowfullscreen></iframe>
+		 <img ng-if="productdetail.detail.tipoMasaje==='f'" width="400" class="" ng-src="{{trustSrc(productdetail.detail.datoMasaje[0].path)}}">
+    </ion-scroll>
 </ion-modal-view>
 
