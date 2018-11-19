@@ -205,6 +205,44 @@ angular.module('starter.controllers')
         $scope.myproduct(proId);
 
       }
+
+      $scope.getProductdetailfull = function (fId, proId) {
+
+        $ionicLoading.show({
+          content: 'Loading',
+          animation: 'fade-in',
+          showBackdrop: true,
+          maxWidth: 200,
+          showDelay: 0
+        });
+ 
+        $scope.productdetailfull = {};
+        $scope.productdetail = {};
+
+        dataManager.get(productdetailfull+"/"+fId+"/"+proId).then(function (response) {
+          console.log("entro en full detalle producto");
+          if (response.status == "true") {
+            console.log("error 4");
+            $scope.productdetail.detail = response.data;
+           // $scope.productdetailfull.detail = repsonse.data;
+            $scope.productdetail.images = response.data.fotos;
+            $scope.visitedUser(proId);
+            $ionicLoading.hide();
+
+            console.log('AAAAAAAAAAAAAAAAAAAAAaa');
+            
+            console.log(response);
+            
+
+          }else{
+            console.log("error al llamar "+"etailproduct/proId"+ "(Mensaje):" + response.message);
+          }
+        }, function (error) {
+            console.log("error 3" + error);
+        });
+      }
+
+
       $scope.getProductDetail2 = function (proId) {
 
         $ionicLoading.show({
@@ -214,7 +252,7 @@ angular.module('starter.controllers')
           maxWidth: 200,
           showDelay: 0
         });
-
+ 
         $scope.productdetail = {};
 
         dataManager.get(productdetail+"/"+proId).then(function (response) {
@@ -261,44 +299,44 @@ angular.module('starter.controllers')
      }).then(function(modal) {$scope.modal = modal;});
 
      $scope.openModalMecanismo = function(proId) {
-      // $scope.mecanismo='Pruebaq';
-         $scope.modal.show();  
-      //   var userid = localStorage.getItem("User_Id");
-      //   $scope.visiteduserdata = {
-      //     user_id: userid,
-      //     furniture_id: proId,
-      //     type_visit: 'mecanismo'
-      //   };
-      //   dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
-      //     if (response.status == "true") {
-      //       console.log(response.message);
-      //     } else {
-      //       console.log(response.message);
-      //     }
-      //   }, function (error) {
-      //     console.log(error);
-      //   });
+      $scope.mecanismo='Pruebaq';
+        $scope.modal.show();  
+        var userid = localStorage.getItem("User_Id");
+        $scope.visiteduserdata = {
+          user_id: userid,
+          furniture_id: proId,
+          type_visit: 'mecanismo'
+        };
+        dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+          if (response.status == "true") {
+            console.log(response.message);
+          } else {
+            console.log(response.message);
+          }
+        }, function (error) {
+          console.log(error);
+        });
       
       };
-
+      
       $scope.openModalMasaje = function(proId) {
-        // $scope.mecanismo='Pruebaq';
+        $scope.mecanismo='Pruebaq';
           $scope.modal.show();  
-        //   var userid = localStorage.getItem("User_Id");
-        //   $scope.visiteduserdata = {
-        //     user_id: userid,
-        //     furniture_id: proId,
-        //     type_visit: 'masaje'
-        //   };
-        //   dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
-        //     if (response.status == "true") {
-        //       console.log(response.message);
-        //     } else {
-        //       console.log(response.message);
-        //     }
-        //   }, function (error) {
-        //     console.log(error);
-        //   });
+          var userid = localStorage.getItem("User_Id");
+          $scope.visiteduserdata = {
+            user_id: userid,
+            furniture_id: proId,
+            type_visit: 'masaje'
+          };
+          dataManager.post(addvisitedUser, $scope.visiteduserdata).then(function (response) {
+            if (response.status == "true") {
+              console.log(response.message);
+            } else {
+              console.log(response.message);
+            }
+          }, function (error) {
+            console.log(error);
+          });
         
         };
 
@@ -307,13 +345,12 @@ angular.module('starter.controllers')
         $scope.modal.remove();
        };
 
-     
+      //$scope.getProductDetail2($stateParams.prId);
 
-
-      $scope.getProductDetail2($stateParams.prId);
-
-
-
+      var store_id = localStorage.getItem("store_id"); 
+      $scope.getProductdetailfull(store_id, $stateParams.prId);
+      
+    
     })
 
   })

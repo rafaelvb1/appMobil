@@ -25,14 +25,14 @@
           {{productdetail.detail[0].color_cat}},</div>
 	  </div>
 	  <br>
-      <div class="row">
+      <div class="row" ng-if="productdetail.detail.tipoMecanismo!=n">
         <div class="col-80">
           <h5><a href="#" ng-click="openModalMecanismo(productdetail.detail[0].mecanismo_id)">Mecanismo:
               {{productdetail.detail[0].mecanismo_nombre}}<i class="icon ion-ios-photos" ng-click="openModalMecanismo(productdetail.detail[0].mecanismo_id)"></i>,</a></h5>
         </div>
 	  </div>
 	  <br>
-      <div class="row" ng-if="productdetail.detail[0].masaje_nombre!=null">
+      <div class="row" ng-if="productdetail.detail.tipoMasaje!=n">
         <div class="col-80">
           <h5 ng-click="openModalMasaje(productdetail.detail[0].masaje_id)">Masaje:
               {{productdetail.detail[0].masaje_nombre}}<i class="icon ion-ios-photos" ng-click="openModalMasaje(productdetail.detail[0].masaje_id)"></i>,</h5>
@@ -41,7 +41,7 @@
 				{{productdetail.detail[0].masaje_id}}
 			</div>
 	  </div>
-	  <br>
+	  <br> 
       <div class="row">
         <div class="col-80">Alto:{{productdetail.detail[0].alto}}, Profundidad:{{productdetail.detail[0].profundo}},
           Ancho:{{productdetail.detail[0].ancho}}</div>
@@ -49,10 +49,10 @@
 	  <br>
       <div class="row">
         <div class="col-80">sku:{{productdetail.detail[0].sku}}</div>
-	  </div>
-	  <div class="row">
+    </div>
+	  <div class="row" ng-if="productdetail.detail.tienePedidoEspecial">
         <div class="col-80">
-			<a href="#" ng-click="">Pedido Especial</a>
+			<a href="#/app/specialproduct/64" ng-click="">Pedido Especial</a>
 		</div>
 	  </div>
 	  <br>

@@ -235,6 +235,17 @@ angular.module('starter', ['ionic',
       }
     })
 
+    .state('app.specialproduct', {
+      cache:false,
+      url: '/specialproduct/:prId',
+      views: {
+        'menuContent': {
+          templateUrl: 'js/products/special-product.html',
+          controller: 'SpecialProductCtrl'
+        }
+      }
+    })
+
 
 		// .state('app.productslistdetail', {
   //     cache:false,

@@ -12,6 +12,8 @@ var getUserDetail = baseUrl+"vendedor/getuserdetail";
 var userUpdateState = baseUrl+"vendedor/userupdate/";
 var addvisitedUser = baseUrl+"vendedor/guardarVisita/";
 
+var productdetailfull = baseUrl+"vendedor/obtenerProductoPorIdFull/"
+
 var productRelatedData = baseUrl+"vendedor/getproductrelatedinfo/";
 
 var productosPorTienda = baseUrl+"vendedor/obtenerMueblesPorTienda/";
