@@ -300,9 +300,7 @@ angular.module('starter.controllers')
      }).then(function(modal) {$scope.modal = modal;});
 
      $scope.openModalMecanismo = function(proId) {
-
      
-
       $scope.mecanismo='Pruebaq';
         $scope.modal.show();  
         var userid = localStorage.getItem("User_Id");
@@ -354,6 +352,18 @@ angular.module('starter.controllers')
         
         };
 
+        $scope.pauseVideo = function() {
+
+          var iframes = document.getElementsByTagName("iframe");
+          if (iframes != null) {
+              for (var i = 0; i < iframes.length; i++) {
+                  iframes[i].src = iframes[i].src; //causes a reload so it stops playing, music, video, etc.
+              }
+            }
+  
+    
+      };
+
      $scope.closeModal = function() {
         $scope.modal.hide(); 
         $scope.modal.remove();
@@ -363,7 +373,13 @@ angular.module('starter.controllers')
         $scope.modal2.hide(); 
         $scope.modal2.remove();
        };
+     
+       $scope.$on('modal.hidden', function() {
+        $scope.pauseVideo();
+      });
 
+
+  
       //$scope.getProductDetail2($stateParams.prId);
 
       var store_id = localStorage.getItem("store_id"); 
