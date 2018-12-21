@@ -7,7 +7,7 @@
     <author email="you@example.com" href="http://example.com/">
       Your Name Here
     </author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.100.9:8100" />
     <access origin="*" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="ShowSplashScreenSpinner" value="false" />
@@ -53,5 +53,6 @@
     <plugin name="phonegap-plugin-push" spec="^1.10.5">
         <variable name="SENDER_ID" value="162284163567" />
     </plugin>
+    <allow-navigation href="http://192.168.100.9:8100" sessionid="e523b82d" />
     <engine name="android" spec="6.3.0" />
 </widget>

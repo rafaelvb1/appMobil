@@ -16,6 +16,8 @@ var productdetailfull = baseUrl+"vendedor/obtenerProductoPorIdFull/"
 
 var productRelatedData = baseUrl+"vendedor/getproductrelatedinfo/";
 
+var pedidoEspecial = baseUrl+"vendedor/obtenerMueblesPedidoEspecial/";
+
 var productosPorTienda = baseUrl+"vendedor/obtenerMueblesPorTienda/";
 var detailproduct = baseUrl+"vendedor/detailproduct/";
 

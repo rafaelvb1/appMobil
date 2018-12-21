@@ -4,9 +4,7 @@ angular.module('starter.controllers')
 
     $ionicPlatform.ready(function () {
 
-     
-
-      $scope.getProductDetail2 = function (proId) {
+      $scope.getPedidoEspecial = function () {
 
         $ionicLoading.show({
           content: 'Loading',
@@ -16,13 +14,15 @@ angular.module('starter.controllers')
           showDelay: 0
         });
 
-        $scope.productdetail = {};
+        $scope.pedidoEspecial = {};
 
-        dataManager.get(productdetail + "/" + proId).then(function (response) {
+        dataManager.get(pedidoEspecial + "/8/64").then(function (response) {
+          console.log(response);
+          
           if (response.status == "true") {
-            $scope.productdetail.detail = response.data;
-            $scope.productdetail.images = response.data.fotos;
+            $scope.pedidoEspecial = response.data;
             $ionicLoading.hide();
+
           } else {
             console.log("error al llamar " + "etailproduct/proId" + "(Mensaje):" + response.message);
           }
@@ -31,7 +31,8 @@ angular.module('starter.controllers')
         });
       }
 
-      $scope.getProductDetail2($stateParams.prId);
+      $scope.getPedidoEspecial();
 
+      //$stateParams.prId
     })
   })
