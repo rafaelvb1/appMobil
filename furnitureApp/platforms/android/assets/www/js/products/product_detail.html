@@ -8,12 +8,12 @@
       </label>
     </div> -->
   </ion-nav-title>
-  <ion-content class="product_detail_listing">
+  <ion-content class="product_detail_listing" >
     <div class="product_name_d">
       <p class="item-description">{{productdetail.detail[0].nombre}}</p>
     </div>
-    <ion-slide-box>
-      <ion-slide ng-repeat="image in  productdetail.images">
+   <ion-slide-box style="max-height:400px">
+      <ion-slide ng-repeat="image in productdetail.images">
         <img style="width: 100vw; height: auto;" ng-src="{{image.path}}" />
       </ion-slide>
     </ion-slide-box>
@@ -44,7 +44,7 @@
           Ancho:{{productdetail.detail[0].ancho}}</div>
 	  </div>
 	  <img style="width: 100vw; height: auto;" ng-src="{{image.path}}" />
-      <div class="row">
+      <div class="row" ng-if="productdetail.detail[0].sku">
         <div class="col-80">sku:{{productdetail.detail[0].sku}}</div>
     </div>
 	  <div class="row" ng-if="productdetail.detail.tienePedidoEspecial">

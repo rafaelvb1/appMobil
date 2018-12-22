@@ -11079,12 +11079,6 @@ ion-slide {
   margin-top: 0px; }
 
 /*==scss for the product detail listing==*/
-.product_detail_listing .scroll .slider {
-  height: auto; }
-  .product_detail_listing .scroll .slider .slider-pager .slider-pager-page {
-    font-size: 9px;
-    width: 9px;
-    color: rgb(42,89,180); }
 
 .product_detail_listing .more-info {
   background: rgba(0, 0, 0, 0.15);
@@ -11704,15 +11698,6 @@ ion-item.alto-others.item {
 .alto-others .item-input {
     padding: 8px 0px 5px 10px;
     width: 45px;
-}
-
-.slider-pager {
-  position: relative !important;
-  bottom: 30px !important;
-  z-index: 999 !important;
-  width: 100% !important;
-  height: 15px !important;
-  text-align: center !important;
 }
 
 .slider-pager .slider-pager-page {

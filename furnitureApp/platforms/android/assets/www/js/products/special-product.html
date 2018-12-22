@@ -2,6 +2,7 @@
   <ion-content>
     <ion-list class="grid-container">
       <ion-item ng-repeat="item in pedidoEspecial" class="grid col col-50" class="item-remove-animate">
+        <img width="100%" ng-src="{{item.path}}">
         <h4>{{ item.nombre }}</h4>
       </ion-item>
     </ion-list>

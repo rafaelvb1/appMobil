@@ -20,7 +20,7 @@ angular.module('starter.controllers')
           console.log(response);
           
           if (response.status == "true") {
-            $scope.pedidoEspecial.detail = response.data;
+            $scope.pedidoEspecial = response.data;
             $ionicLoading.hide();
 
           } else {
