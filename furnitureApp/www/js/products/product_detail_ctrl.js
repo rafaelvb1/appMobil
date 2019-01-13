@@ -222,6 +222,12 @@ angular.module('starter.controllers')
         dataManager.get(productdetailfull+fId+"/"+proId).then(function (response) {
           console.log("entro en full detalle producto");
           if (response.status == "true") {
+
+
+            $timeout( function() {
+              $ionicSlideBoxDelegate.update();
+              }, 50);
+              
             console.log("error 4");
             $scope.productdetail.detail = response.data;
            // $scope.productdetailfull.detail = repsonse.data;
