@@ -17,7 +17,8 @@ angular.module('starter.controllers')
 
             $scope.logindata = {username:'',password:'',devicetoken:''};
             $scope.userLogin = function(form){
-                     $scope.logindata.devicetoken = $rootScope.deviceId;
+                    // $scope.logindata.devicetoken = $rootScope.deviceId;
+                    $scope.cargaToken(); 
                      if(form.$valid) {
                         if($cordovaNetwork.isOnline() == true) {
                         dataManager.post(userLoginState, $scope.logindata).then(function (response) {
@@ -68,6 +69,34 @@ angular.module('starter.controllers')
                 });
               }
 
+             //Carga token para notificacion
+             $scope.cargaToken = function(){
+
+                window.FirebasePlugin.onTokenRefresh(function(token) {
+                    // save this server-side and use it to push notifications to this device
+                    console.log(token);
+                }, function(error) {
+                    console.error(error);
+                });
+                
+                window.FirebasePlugin.getInfo(function(token) {
+                    // save this server-side and use it to push notifications to this device
+                    console.log(token);
+                   
+                }, function(error) {
+                    console.error(error);
+                });
+
+                window.FirebasePlugin.getToken(function(token) {
+                  // save this server-side and use it to push notifications to this device
+                  console.log(token);
+                  $scope.logindata.devicetoken=token;
+                  return token;
+              }, function(error) {
+                  console.error(error);
+              });
+            }
+              
              /*Facebook login*/
              $scope.facebooklogin = function () {
                     $cordovaOauth.facebook("1614759508837273", ["email", "read_stream", "user_website", "user_location", "user_relationships"]).then(function (result) {
