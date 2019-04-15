@@ -3,7 +3,8 @@
     <ion-list class="grid-container">
       <ion-item ng-repeat="item in pedidoEspecial" class="grid col col-50" class="item-remove-animate">
         <img width="100%" ng-src="{{item.path}}">
-        <h4>{{ item.nombre }}</h4>
+        <h5>{{ item.nombre }},<br>Color:{{ item.color_cat }},<br>Tapiz: {{item.tapiz_nombre}},<br>Alto:{{item.alto}}, Profundidad:{{item.profundo}},
+          <br>Ancho:{{item.ancho}},<br>SKU:{{ item.sku }}</h4>
       </ion-item>
     </ion-list>
   </ion-content>
