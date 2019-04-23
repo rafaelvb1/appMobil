@@ -15,8 +15,10 @@ angular.module('starter.controllers')
         });
 
         $scope.pedidoEspecial = {};
+        var store_id = localStorage.getItem("store_id"); 
+        //$scope.getProductdetailfull(store_id, $stateParams.prId);
 
-        dataManager.get(pedidoEspecial + "/8/64").then(function (response) {
+        dataManager.get(pedidoEspecial + "/"+store_id+"/"+$stateParams.prId).then(function (response) {
           console.log(response);
           
           if (response.status == "true") {
